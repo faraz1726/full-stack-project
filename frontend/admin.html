@@ -23,7 +23,7 @@ if (localStorage.getItem("isAdmin") !== "true") {
 
 // LOAD TRAVEL DATA
 async function loadTravel() {
-  const res = await fetch("http://127.0.0.1:5000/api/travel");
+  const res = await fetch("https://full-stack-project-x16t.onrender.com/api/travel");
   const data = await res.json();
 
   const table = document.getElementById("travelTable");
@@ -60,7 +60,7 @@ async function loadTravel() {
 
 // LOAD PACK DATA
 async function loadPack() {
-  const res = await fetch("http://127.0.0.1:5000/api/pack");
+  const res = await fetch("https://full-stack-project-x16t.onrender.com/api/pack");
   const data = await res.json();
 
   const table = document.getElementById("packTable");
@@ -97,7 +97,7 @@ async function loadPack() {
 
 // DELETE TRAVEL
 async function deleteTravel(id) {
-  await fetch(`http://127.0.0.1:5000/api/travel/${id}`, {
+  await fetch(`https://full-stack-project-x16t.onrender.com/api/travel/${id}`,{
     method: "DELETE"
   });
   loadTravel();
@@ -106,7 +106,7 @@ async function deleteTravel(id) {
 
 // DELETE PACK
 async function deletePack(id) {
-  await fetch(`http://127.0.0.1:5000/api/pack/${id}`, {
+  await fetch(`https://full-stack-project-x16t.onrender.com/api/pack/${id}`,{
     method: "DELETE"
   });
   loadPack();
