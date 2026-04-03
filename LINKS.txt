@@ -1,0 +1,13 @@
+https://lustrous-meerkat-7f4e16.netlify.app   (Frontend)
+                ↓
+https://full-stack-project-x16t.onrender.com  (Backend)
+                ↓
+MongoDB Atlas (Database)
+
+
+mongodb :- username faraz1726 ; password farazahmed2004
+website :- username admin ; password 12345 
+
+ 
+
+
