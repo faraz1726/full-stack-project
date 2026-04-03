@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+<button onclick="logout()">Logout</button>
+<h2>Travel Bookings</h2>
+<table border="1" id="travelTable"></table>
+
+<br><br>
+
+<h2>Packers Bookings</h2>
+<table border="1" id="packTable"></table>
+
+
+<script>
+if (localStorage.getItem("isAdmin") !== "true") {
+  alert("Access denied");
+  window.location.href = "login.html";
+}
+
+
+// LOAD TRAVEL DATA
+async function loadTravel() {
+  const res = await fetch("http://127.0.0.1:5000/api/travel");
+  const data = await res.json();
+
+  const table = document.getElementById("travelTable");
+
+  table.innerHTML = `
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Date</th>
+      <th>Passengers</th>
+      <th>Service</th>
+      <th>Details</th>
+      <th>Action</th>
+    </tr>
+  `;
+
+  data.forEach(item => {
+    table.innerHTML += `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.phone}</td>
+        <td>${item.date}</td>
+        <td>${item.passengers}</td>
+        <td>${item.service}</td>
+        <td>${item.details}</td>
+        <td>
+          <button onclick="deleteTravel('${item._id}')">Delete</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+
+// LOAD PACK DATA
+async function loadPack() {
+  const res = await fetch("http://127.0.0.1:5000/api/pack");
+  const data = await res.json();
+
+  const table = document.getElementById("packTable");
+
+  table.innerHTML = `
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Date</th>
+      <th>Pickup</th>
+      <th>Drop</th>
+      <th>Truck</th>
+      <th>Action</th>
+    </tr>
+  `;
+
+  data.forEach(item => {
+    table.innerHTML += `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.phone}</td>
+        <td>${item.date}</td>
+        <td>${item.pickup}</td>
+        <td>${item.drop}</td>
+        <td>${item.truck}</td>
+        <td>
+          <button onclick="deletePack('${item._id}')">Delete</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+
+// DELETE TRAVEL
+async function deleteTravel(id) {
+  await fetch(`http://127.0.0.1:5000/api/travel/${id}`, {
+    method: "DELETE"
+  });
+  loadTravel();
+}
+
+
+// DELETE PACK
+async function deletePack(id) {
+  await fetch(`http://127.0.0.1:5000/api/pack/${id}`, {
+    method: "DELETE"
+  });
+  loadPack();
+}
+
+
+// LOAD BOTH
+loadTravel();
+loadPack();
+function logout() {
+  localStorage.removeItem("isAdmin");
+  window.location.href = "login.html";
+}
+
+</script>
+
+</body>
+</html>
