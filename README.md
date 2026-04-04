@@ -84,8 +84,7 @@ npm start
 ##  Future Improvements
 
 - User authentication and authorization  
-- Payment gateway integration  
-- Booking status tracking system  
+- Payment gateway integration   
 - Email/SMS notification system  
 
 ---
