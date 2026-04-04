@@ -1,10 +1,10 @@
-# 🚀 Travel & Packing Booking System
+#  Travel & Packing Booking System
 
 A full-stack web application that enables users to submit travel and packing service requests, with an admin dashboard to efficiently manage and track bookings.
 
 ---
 
-## 📌 Features
+##  Features
 
 - User-friendly interface for submitting travel and packing requests  
 - Admin panel for viewing, managing, and deleting bookings  
@@ -14,7 +14,7 @@ A full-stack web application that enables users to submit travel and packing ser
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Frontend:**  
 React.js, HTML, CSS, JavaScript  
@@ -30,14 +30,14 @@ Netlify (Frontend), Render (Backend)
 
 ---
 
-## 🔗 Live Demo & Repository
+##  Live Demo & Repository
 
-- 🌐 Live Application: https://lustrous-meerkat-7f4e16.netlify.app  
-- 💻 GitHub Repository: https://github.com/faraz1726/full-stack-project  
+-  Live Application: https://lustrous-meerkat-7f4e16.netlify.app  
+-  GitHub Repository: https://github.com/faraz1726/full-stack-project  
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 client/        → React frontend  
@@ -48,7 +48,7 @@ models/        → Database schemas
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 1. Clone the repository  
 ```bash
@@ -81,7 +81,7 @@ npm start
 
 ---
 
-## 📊 Future Improvements
+##  Future Improvements
 
 - User authentication and authorization  
 - Payment gateway integration  
